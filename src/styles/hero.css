@@ -1,0 +1,330 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: radial-gradient(circle at 50% 25%, #0b2246 0%, #020b18 85%);
+  color: #ffffff;
+  padding: 32px 18px 40px;
+  overflow: hidden;
+}
+
+/* Background Cyber Grid & Connecting Mesh Lines */
+.hero-mesh-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.hero-glow-orb {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(217, 151, 38, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  color: #cbd5e1;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.hero-tagline {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Checklist Items */
+.hero-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0 auto 26px;
+  max-width: 380px;
+  text-align: left;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.check-icon-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+/* White Lead Form Card */
+.lead-form-card {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  margin-top: 10px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-input-text {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #ffffff;
+}
+
+.form-input-text:focus {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 3px rgba(217, 151, 38, 0.2);
+}
+
+/* Phone input with India Flag */
+.phone-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  height: 48px;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.phone-input-wrap:focus-within {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 3px rgba(217, 151, 38, 0.2);
+}
+
+.country-flag-select {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  height: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  user-select: none;
+}
+
+.flag-emoji {
+  font-size: 18px;
+}
+
+.phone-input-field {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 14px;
+  font-size: 15px;
+  color: #1e293b;
+  font-family: inherit;
+}
+
+/* reCAPTCHA component */
+.recaptcha-box {
+  background: #f9f9f9;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.recaptcha-box:hover {
+  background: #f3f3f3;
+}
+
+.recaptcha-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.recaptcha-checkbox {
+  width: 26px;
+  height: 26px;
+  border: 2px solid #c1c1c1;
+  border-radius: 3px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.recaptcha-checkbox.checked {
+  border-color: var(--primary-green);
+  background: #ffffff;
+}
+
+.recaptcha-label {
+  font-size: 14px;
+  color: #282828;
+  font-weight: 500;
+  font-family: Roboto, -apple-system, sans-serif;
+}
+
+.recaptcha-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 9px;
+  color: #555555;
+  font-family: Roboto, -apple-system, sans-serif;
+}
+
+.recaptcha-logo-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 2px;
+}
+
+/* Big Gold Submit Button */
+.btn-submit-quote {
+  width: 100%;
+  background: var(--primary-gold);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 13px 20px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px var(--gold-glow);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.btn-submit-quote:hover {
+  background: var(--primary-gold-dark);
+  transform: translateY(-1px);
+}
+
+.btn-submit-quote:active {
+  transform: scale(0.98);
+}
+
+/* Mid-Page Callout Banner */
+.urgency-banner-section {
+  background: #f8fafc;
+  padding: 30px 18px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.urgency-callout-text {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.45;
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+
+.urgency-cta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.btn-urgency-call {
+  background: var(--primary-gold);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 20px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px var(--gold-glow);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.btn-urgency-call:hover {
+  background: var(--primary-gold-dark);
+}
+
+.btn-urgency-whatsapp {
+  background: var(--primary-green);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 20px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px var(--green-glow);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.btn-urgency-whatsapp:hover {
+  background: var(--primary-green-dark);
+}

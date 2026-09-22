@@ -13,26 +13,34 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 14px;
+  padding: 8px 12px;
   gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header-logo-container {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   text-decoration: none;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 .header-logo-img {
-  height: 48px;
+  height: 38px;
   width: auto;
   object-fit: contain;
+  flex-shrink: 0;
+  display: block;
 }
 
 .header-brand-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  min-width: 0;
 }
 
 .brand-title {
@@ -40,36 +48,40 @@
   font-weight: 800;
   color: #0f172a;
   line-height: 1.1;
-  letter-spacing: -0.2px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
 .brand-subtitle {
-  font-size: 9px;
+  font-size: 8px;
   color: var(--primary-gold-dark);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .btn-header-whatsapp {
   background: var(--primary-green);
   color: #ffffff;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 8px 14px;
+  padding: 6px 10px;
   border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   box-shadow: 0 2px 8px var(--green-glow);
   transition: transform 0.15s ease, background 0.15s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-header-whatsapp:hover {
@@ -80,21 +92,63 @@
 .btn-header-call {
   background: var(--primary-gold);
   color: #ffffff;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  padding: 8px 14px;
+  padding: 6px 10px;
   border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   box-shadow: 0 2px 8px var(--gold-glow);
   transition: transform 0.15s ease, background 0.15s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-header-call:hover {
   background: var(--primary-gold-dark);
   transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 7px 10px;
+    gap: 6px;
+  }
+
+  .header-logo-container {
+    gap: 6px;
+  }
+
+  .header-logo-img {
+    height: 34px;
+  }
+
+  .brand-title {
+    font-size: 12px;
+  }
+
+  .brand-subtitle {
+    display: none; /* Prevents overflow/overlap on mobile screens */
+  }
+
+  .header-actions {
+    gap: 5px;
+  }
+
+  .btn-header-whatsapp,
+  .btn-header-call {
+    font-size: 11px;
+    padding: 5px 8px;
+    gap: 3px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 350px) {
+  .brand-title {
+    display: none;
+  }
 }
 
 /* Fixed Bottom Action Bar */

@@ -13,7 +13,6 @@ import Testimonials from './components/Testimonials';
 import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import SuccessModal from './components/SuccessModal';
-import { Smartphone, Monitor } from 'lucide-react';
 import './styles/index.css';
 import './styles/header.css';
 import './styles/hero.css';
@@ -22,7 +21,6 @@ import './styles/faq.css';
 import './styles/footer.css';
 
 export default function App() {
-  const [isDesktopMode, setIsDesktopMode] = useState(false);
   const [leadSuccessData, setLeadSuccessData] = useState(null);
 
   const handleQuoteSuccess = (data) => {
@@ -30,37 +28,9 @@ export default function App() {
   };
 
   return (
-    <div className={`app-viewport-wrapper ${isDesktopMode ? 'desktop-mode-active' : ''}`}>
-      {/* Top Preview Control Bar on Desktop */}
-      <div className="viewport-control-bar">
-        <div className="brand-indicator">
-          <span className="dot"></span>
-          <span>SANWARE CCTV WEB PREVIEW</span>
-        </div>
-
-        <div className="view-toggle-btns">
-          <button 
-            className={`view-btn ${!isDesktopMode ? 'active' : ''}`}
-            onClick={() => setIsDesktopMode(false)}
-            aria-label="Mobile Simulation View"
-          >
-            <Smartphone size={14} />
-            <span>Mobile View (Ref. Match)</span>
-          </button>
-
-          <button 
-            className={`view-btn ${isDesktopMode ? 'active' : ''}`}
-            onClick={() => setIsDesktopMode(true)}
-            aria-label="Desktop Expanded View"
-          >
-            <Monitor size={14} />
-            <span>Expanded Desktop View</span>
-          </button>
-        </div>
-      </div>
-
+    <div className="app-viewport-wrapper">
       {/* Main Mobile-First Website Shell */}
-      <main className={`mobile-app-container ${isDesktopMode ? 'desktop-mode' : ''}`}>
+      <main className="mobile-app-container">
         <Header />
         <HeroSection onQuoteSuccess={handleQuoteSuccess} />
         <UrgencyBanner />

@@ -1,31 +1,42 @@
 import React from 'react';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, Calendar } from 'lucide-react';
 import { companyInfo } from '../data/companyInfo';
 
-export default function BottomBar() {
+export default function BottomBar({ onOpenQuote }) {
   const whatsappUrl = `https://wa.me/91${companyInfo.phoneRaw}?text=${companyInfo.whatsappMessage}`;
 
   return (
-    <nav className="bottom-floating-bar" aria-label="Quick Actions">
-      <a 
-        href={`tel:${companyInfo.phoneTel}`} 
-        className="bottom-bar-btn bottom-bar-call"
-        aria-label="Call Now"
-      >
-        <Phone size={18} fill="currentColor" />
-        <span>Call NOW!</span>
-      </a>
+    <nav className="fixed-bottom-bar" aria-label="Quick Mobile Actions">
+      <div className="bottom-bar-inner">
+        <a 
+          href={whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="bottom-btn whatsapp"
+          aria-label="WhatsApp Us"
+        >
+          <MessageCircle size={18} fill="currentColor" />
+          <span>WhatsApp</span>
+        </a>
 
-      <a 
-        href={whatsappUrl} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="bottom-bar-btn bottom-bar-whatsapp"
-        aria-label="Chat on WhatsApp"
-      >
-        <MessageCircle size={18} fill="currentColor" />
-        <span>Whatsapp NOW!</span>
-      </a>
+        <a 
+          href={`tel:${companyInfo.phoneTel}`} 
+          className="bottom-btn call"
+          aria-label="Call Us"
+        >
+          <Phone size={18} fill="currentColor" />
+          <span>Call Now</span>
+        </a>
+
+        <button 
+          className="bottom-btn quote"
+          onClick={onOpenQuote}
+          aria-label="Book Free Site Survey"
+        >
+          <Calendar size={18} />
+          <span>Book Survey</span>
+        </button>
+      </div>
     </nav>
   );
 }

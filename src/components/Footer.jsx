@@ -1,78 +1,114 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Shield, Building2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Shield, ChevronRight } from 'lucide-react';
 import { companyInfo } from '../data/companyInfo';
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="site-footer">
-      {/* Brand & Director Header */}
-      <div className="footer-top-brand">
-        <div className="footer-logo-row">
-          <img 
-            src="/images/sanware_st_logo.png" 
-            alt="Sanware Integrated Solutions" 
-            className="footer-logo-img" 
-          />
-          <div>
-            <h3 className="footer-company-name">{companyInfo.name}</h3>
-            <span className="footer-director-badge">{companyInfo.director}</span>
+    <footer className="ref-site-footer">
+      <div className="footer-inner">
+        {/* Brand & About Column matching Frame 26 */}
+        <div className="footer-column about-col">
+          <div className="footer-brand" onClick={() => onNavigate('home')} role="button" tabIndex={0}>
+            <img 
+              src="/images/sanware_st_logo.png" 
+              alt="Sanware Integrated Solutions Logo" 
+              className="footer-logo"
+            />
+            <div className="footer-brand-title-wrap">
+              <span className="footer-brand-main">SANWARE</span>
+              <span className="footer-brand-sub">INTEGRATED SOLUTIONS</span>
+            </div>
+          </div>
+
+          <h4 className="footer-heading">About Sanware</h4>
+          <p className="footer-text">
+            Sanware provides professional security and surveillance systems with certified engineering personnel to ensure safety and protection across industries.
+          </p>
+
+          <div className="footer-action-links">
+            <button 
+              className="footer-text-btn"
+              onClick={() => onNavigate('about')}
+            >
+              <span>Read more</span>
+              <ChevronRight size={14} />
+            </button>
+            <button 
+              className="footer-highlight-link"
+              onClick={() => onNavigate('contact')}
+            >
+              Free Consultation Now
+            </button>
           </div>
         </div>
-        <p style={{ fontSize: '12.5px', color: '#94a3b8', marginTop: '6px' }}>
-          Established in {companyInfo.establishedYear} with {companyInfo.experienceYears} years of delivering cutting-edge surveillance, structured networking, and home automation solutions across Delhi NCR.
+
+        {/* Quick Links Column */}
+        <div className="footer-column links-col">
+          <h4 className="footer-heading">Quick Links</h4>
+          <ul className="footer-nav-list">
+            <li>
+              <button onClick={() => onNavigate('home')}>Home</button>
+            </li>
+            <li>
+              <button onClick={() => onNavigate('services')}>CCTV Installation & AMC</button>
+            </li>
+            <li>
+              <button onClick={() => onNavigate('services')}>Fire Alarm & Smoke Detection</button>
+            </li>
+            <li>
+              <button onClick={() => onNavigate('services')}>Access Control & Biometrics</button>
+            </li>
+            <li>
+              <button onClick={() => onNavigate('industries')}>Industries We Serve</button>
+            </li>
+            <li>
+              <button onClick={() => onNavigate('about')}>About Us</button>
+            </li>
+            <li>
+              <button onClick={() => onNavigate('contact')}>Contact Security Experts</button>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Details Column matching Frame 26 */}
+        <div className="footer-column contact-col">
+          <h4 className="footer-heading">Contact Details</h4>
+          <div className="footer-contact-stack">
+            <p className="footer-contact-line">
+              <strong>Address:</strong> {companyInfo.address}
+            </p>
+            <p className="footer-contact-line">
+              <strong>Phone:</strong>{' '}
+              <a href={`tel:${companyInfo.phoneTel}`} className="footer-link-active">
+                {companyInfo.phoneDisplay}
+              </a>
+            </p>
+            <p className="footer-contact-line">
+              <strong>Email:</strong>{' '}
+              <a href={`mailto:${companyInfo.primaryEmail}`} className="footer-link-active">
+                {companyInfo.primaryEmail}
+              </a>
+            </p>
+            <p className="footer-contact-line">
+              <strong>Director:</strong> {companyInfo.director}
+            </p>
+            
+            <div className="footer-legal-tags">
+              <span>CIN: {companyInfo.cin}</span>
+              <span>GSTIN: {companyInfo.gstin}</span>
+              <span>MSME: {companyInfo.msme}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Copyright Bar */}
+      <div className="footer-copyright-bar">
+        <p>
+          © 2026 <strong>SANWARE INTEGRATED SOLUTIONS PVT. LTD.</strong> | All Rights Reserved!
         </p>
-      </div>
-
-      {/* Official Corporate Credentials Box */}
-      <div className="footer-credentials-grid">
-        <div className="credential-item">
-          <span className="credential-label">Corporate Identification No. (CIN)</span>
-          <span className="credential-value">{companyInfo.cin}</span>
-        </div>
-
-        <div className="credential-item">
-          <span className="credential-label">Goods &amp; Services Tax (GSTIN)</span>
-          <span className="credential-value">{companyInfo.gstin}</span>
-        </div>
-
-        <div className="credential-item">
-          <span className="credential-label">Govt. MSME Registration</span>
-          <span className="credential-value">{companyInfo.msme}</span>
-        </div>
-      </div>
-
-      {/* Contact & Address Details */}
-      <div className="footer-contact-info">
-        <h4 className="footer-contact-title">Head Office &amp; Contact</h4>
-
-        <div className="footer-contact-row">
-          <MapPin size={16} className="footer-contact-icon" />
-          <span>{companyInfo.address}</span>
-        </div>
-
-        <div className="footer-contact-row">
-          <Phone size={16} className="footer-contact-icon" />
-          <a href={`tel:${companyInfo.phoneTel}`} style={{ color: 'var(--primary-gold-light)', fontWeight: '600' }}>
-            {companyInfo.phoneDisplay}
-          </a>
-        </div>
-
-        <div className="footer-contact-row">
-          <Mail size={16} className="footer-contact-icon" />
-          <span>{companyInfo.emails.join(' | ')}</span>
-        </div>
-      </div>
-
-      {/* Disclaimer & Privacy Policy from Reference Video */}
-      <div className="footer-disclaimer-box">
-        <h5 className="disclaimer-heading">Disclaimer &amp; Privacy Policy:</h5>
-        <p className="disclaimer-text">
-          The information provided on this website is for general reference and is subject to change without prior notice. Visuals are illustrative and may differ from actual hardware offerings. By submitting your details, you authorize Sanware Integrated Solutions Private Limited to contact you via phone, SMS, or email for service-related communication. We are committed to maintaining data privacy and confidentiality.
-        </p>
-      </div>
-
-      <div className="footer-copyright">
-        © {new Date().getFullYear()} {companyInfo.name}. All Rights Reserved.
       </div>
     </footer>
   );

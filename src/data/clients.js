@@ -50,6 +50,11 @@ export const marqueeClients = [
   "Emaar Emerald Estate"
 ];
 
+export const clientsList = marqueeClients.map((name) => ({
+  name,
+  sector: "Corporate / Retail / Realty"
+}));
+
 export const certifications = [
   { name: "ISO 9001:2015", subtitle: "Quality Management Certified" },
   { name: "MSME UDYAM", subtitle: "Govt. of India Registered (UDYAM-HR-05-0193038)" },

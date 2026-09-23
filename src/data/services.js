@@ -1,87 +1,153 @@
-export const services = [
+export const referenceServices = [
   {
-    id: "home-cctv",
-    title: "Home CCTV",
-    category: "Residential Security",
-    image: "/images/service_home_cctv_real.jpg",
-    description: "Tailored indoor & outdoor high-definition surveillance systems designed to keep your family and home protected 24/7 with instant mobile alerts.",
-    features: ["Crystal HD Day & Night Recording", "Motion-activated smart phone alerts", "Child & pet live monitoring", "Weatherproof outdoor bullet cameras"]
+    id: "cctv-installation-amc",
+    title: "CCTV Installation & AMC (Gurgaon / NCR)",
+    shortTitle: "CCTV Installation & AMC",
+    image: "/images/service_cctv_install.png",
+    description: "Homes, offices, warehouses; DVR/NVR, remote & cloud monitoring",
+    features: [
+      "4K Ultra-HD & Full Color Night Vision cameras",
+      "Live remote smartphone viewing on iOS & Android",
+      "Annual Maintenance Contract (AMC) with quarterly health audits",
+      "Free site survey with itemized cable & camera quote"
+    ],
+    targetPage: "services"
   },
   {
-    id: "office-cctv",
-    title: "Office CCTV",
-    category: "Commercial & Corporate",
-    image: "/images/service_office_cctv_real.jpg",
-    description: "Enterprise surveillance solutions for workplaces, retail shops, warehouses, and factories with centralized NVR multi-screen monitoring.",
-    features: ["Employee attendance & access integration", "Wide-angle corridor & entrance coverage", "Scalable multi-channel NVR storage", "High-capacity server backups"]
+    id: "fire-alarm-smoke-detection",
+    title: "Fire Alarm & Smoke Detection (Gurgaon / NCR)",
+    shortTitle: "Fire Alarm & Smoke Detection",
+    image: "/images/service_fire_alarm.png",
+    description: "NBC-compliant panels, addressable optical smoke detectors, manual call points & hooters",
+    features: [
+      "Designed as per National Building Code (NBC) guidelines",
+      "Addressable & Conventional smoke alarm control panels",
+      "Heat detectors, dual-sensor optical smoke detectors",
+      "Emergency hooters with flashing strobes"
+    ],
+    targetPage: "services"
   },
   {
-    id: "night-vision",
-    title: "Night Vision",
-    category: "Infrared & Starlight Tech",
-    image: "/images/service_night_vision_real.jpg",
-    description: "Advanced infrared, thermal, and full-color starlight night vision technology delivering razor-sharp footage even in pitch-black conditions.",
-    features: ["Full Color Night Vision in ultra-low light", "Smart IR cut filter eliminates glare", "Long-range perimeter night view up to 50m", "Active intruder deterrent lighting"]
-  },
-  {
-    id: "ptz-camera",
-    title: "PTZ CCTV Camera",
-    category: "360° Smart Surveillance",
-    image: "/images/service_ptz_camera_real.jpg",
-    description: "High-speed Pan-Tilt-Zoom smart cameras with auto-tracking, optical zoom, and 360° rotation for comprehensive large-area perimeter control.",
-    features: ["360° continuous pan & 90° tilt", "Up to 30x optical zoom for license plates", "AI auto-tracking of moving persons/vehicles", "Preset patrol tours and auto-guard zones"]
-  },
-  {
-    id: "cctv-amc",
-    title: "AMC",
-    category: "Maintenance & Reliability",
-    image: "/images/service_amc_real.jpg",
-    description: "Annual Maintenance Contracts (AMC) to ensure uninterrupted 24/7 system health, quarterly lens cleaning, cable checks, and firmware updates.",
-    features: ["Periodic quarterly preventive visits", "Immediate breakdown call-out support", "Free lens cleaning & angle calibration", "Firmware patching and disk health audit"]
-  },
-  {
-    id: "ip-remote",
-    title: "IP Remote Access",
-    category: "Cloud & Mobile Surveillance",
-    image: "/images/service_ip_remote_real.jpg",
-    description: "View live surveillance camera feeds anytime, anywhere worldwide on your iPhone, Android smartphone, iPad, or desktop web browser with encrypted P2P streaming.",
-    features: ["Instant iOS & Android mobile app setup", "Simultaneous multi-user secure access", "Remote recorded playback & clipping", "Cloud backup & intrusion push notifications"]
-  },
-  {
-    id: "networking-solutions",
-    title: "Networking Solutions",
-    category: "Infrastructure & Connectivity",
-    image: "/images/service_networking.jpg",
-    description: "Full-range enterprise networking from network design, Cat6 structured cabling, enterprise wireless routers, firewalls, to server rack management.",
-    features: ["Network Design & Implementation", "High-speed Wireless Network Solutions", "Cyber Network Security & Firewalls", "IT Infrastructure Management & Support"]
-  },
-  {
-    id: "automation-services",
-    title: "Automation Services",
-    category: "Smart Living & Access",
+    id: "access-control-biometrics",
+    title: "Access Control & Biometric Systems (Gurgaon / NCR)",
+    shortTitle: "Access Control & Biometrics",
     image: "/images/service_automation.jpg",
-    description: "Cutting-edge building automation, biometric access control, video door phones, and smart climate & lighting control systems.",
-    features: ["Smart Home Security Solutions", "Building Automation Systems (BMS)", "Biometric & RFID Access Control", "Automated Security & Climate Control"]
+    description: "RFID, fingerprint, face recognition; visitor & time-attendance integration",
+    features: [
+      "High-speed AI facial recognition & contactless entry",
+      "Fingerprint biometric & smart RFID card readers",
+      "Turnstile & electromagnetic door lock integration",
+      "Time-attendance payroll and visitor management sync"
+    ],
+    targetPage: "services"
+  },
+  {
+    id: "intrusion-burglar-alarms",
+    title: "Intrusion & Burglar Alarms (Gurgaon / NCR)",
+    shortTitle: "Intrusion & Burglar Alarms",
+    image: "/images/service_burglar_alarm.png",
+    description: "Perimeter sensors, glass-break, panic buttons; 24/7 instant alerting",
+    features: [
+      "PIR motion sensors and vibration boundary beams",
+      "Acoustic glass-break detectors for windows & balconies",
+      "Silent panic buttons with GSM cellular auto-dialing",
+      "Instant alarm push alerts to your smartphone"
+    ],
+    targetPage: "services"
+  },
+  {
+    id: "smart-home-office-security",
+    title: "Smart Home & Office Security (Gurgaon / NCR)",
+    shortTitle: "Smart Home & Office Security",
+    image: "/images/service_smart_home.png",
+    description: "Smart locks, wireless sensors, video door phones, automated lighting & climate",
+    features: [
+      "Smart digital door locks with biometric fingerprint access",
+      "Two-way HD video door phones with remote unlock",
+      "Automated lighting, climate, and appliance schedules",
+      "Seamless Alexa, Google Home & smartphone control"
+    ],
+    targetPage: "services"
+  },
+  {
+    id: "networking-it-solutions",
+    title: "Networking & IT Infrastructure (Gurgaon / NCR)",
+    shortTitle: "Networking & IT Solutions",
+    image: "/images/service_networking.jpg",
+    description: "Cat6 structured cabling, enterprise Wi-Fi, firewall security & server racks",
+    features: [
+      "Structured Cat6/Cat6A & fiber optic cabling installation",
+      "High-density commercial Wi-Fi access point deployment",
+      "Hardware firewall, router configuration & VPN access",
+      "Server rack setup, patch panels & wire neatness"
+    ],
+    targetPage: "services"
+  }
+];
+
+export const industriesList = [
+  {
+    id: "offices-corporates",
+    title: "Offices & Corporates",
+    image: "/images/corporate-and-offices-1024x1024.webp",
+    subtitle: "Enterprise CCTV, Biometric Access & Server Security",
+    description: "Tailored surveillance for IT parks, corporate headquarters, executive boardrooms, and multi-floor commercial buildings across Gurgaon & DLF Cyber City."
+  },
+  {
+    id: "residential-societies-homes",
+    title: "Residential Societies & Homes",
+    image: "/images/residential-spaces-and-homes-1024x1024.webp",
+    subtitle: "Villas, Gated Societies & High-Rise Apartments",
+    description: "Protecting family residences, boundary perimeters, clubhouses, basements, and entry boom barriers in Golf Course Road, Sohna Road, and Sector 93."
+  },
+  {
+    id: "retail-warehouses",
+    title: "Retail & Warehouses",
+    image: "/images/Warehouses-and-retail-stores-1024x1024.webp",
+    subtitle: "Loss Prevention, Logistics & Stockyard Monitoring",
+    description: "Wide-area high-resolution coverage for logistics hubs, distribution warehouses, retail shopping centers, and inventory loading docks."
+  },
+  {
+    id: "schools-institutions",
+    title: "Schools & Institutions",
+    image: "/images/Schools-Institues-1024x1024.webp",
+    subtitle: "Campuses, Classrooms, Playgrounds & Student Safety",
+    description: "Comprehensive campus surveillance, bus tracking CCTV, and visitor entrance management systems ensuring safety for students and faculty."
   }
 ];
 
 export const cameraSolutions = [
   {
     title: "High-Definition IP Cameras",
-    subtitle: "Next-Gen Digital IP Video",
-    features: ["High-resolution video capture (2MP to 4K)", "Advanced night vision & wide dynamic range (WDR)", "Rugged weather-resistant IP67 metal housing", "Power over Ethernet (PoE) for clean wiring"],
-    benefits: "Clear, detailed footage in all lighting conditions and harsh outdoor environments."
+    subtitle: "Next-Gen Digital IP Video Surveillance",
+    features: [
+      "High-resolution video capture (2MP, 5MP to 4K Ultra-HD)",
+      "True Color Starlight night vision & Wide Dynamic Range (WDR)",
+      "Rugged weather-resistant IP67 metal dome & bullet housing",
+      "Power over Ethernet (PoE) for reliable, single-cable wiring"
+    ],
+    benefits: "Clear, detailed footage in all lighting conditions and harsh outdoor weather."
   },
   {
     title: "CCTV Systems & NVR Storage",
-    subtitle: "Continuous Scalable Recording",
-    features: ["24/7 continuous and motion-based recording", "Multi-terabyte surveillance-grade hard disk storage", "Integrated multi-screen desktop & mobile monitoring", "H.265+ smart compression to save 70% bandwidth"],
-    benefits: "Reliable, expandable systems engineered for long-term extensive security coverage."
+    subtitle: "Continuous, Scalable Centralized Recording",
+    features: [
+      "24/7 continuous and AI motion-activated recording",
+      "Surveillance-grade hard drives with RAID data protection",
+      "Integrated multi-screen desktop & smartphone monitoring",
+      "H.265+ smart video compression saving up to 70% storage bandwidth"
+    ],
+    benefits: "Reliable, expandable systems engineered for uninterrupted security coverage."
   },
   {
     title: "AI Video Analytics",
-    subtitle: "Proactive Smart Security",
-    features: ["Smart human & vehicle classification", "Automated facial recognition & VIP alerts", "Line crossing & perimeter intrusion alarms", "Heatmapping and customer queue anomaly detection"],
-    benefits: "Enhanced security through automated intelligent monitoring and instant threat response."
+    subtitle: "Proactive Smart Security & Anomaly Detection",
+    features: [
+      "Smart human and vehicle classification, filtering false alarms",
+      "Facial recognition, blacklist/whitelist VIP visitor alerts",
+      "Virtual tripwire line-crossing & perimeter intrusion alerts",
+      "Retail footfall counting and customer queue heatmapping"
+    ],
+    benefits: "Automated intelligent monitoring and instant emergency threat response."
   }
 ];

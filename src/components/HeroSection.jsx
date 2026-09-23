@@ -1,49 +1,53 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Phone, FileCheck, ShieldCheck } from 'lucide-react';
 import QuoteForm from './QuoteForm';
+import TrustBadges from './TrustBadges';
+import { companyInfo } from '../data/companyInfo';
 
-export default function HeroSection({ onQuoteSuccess }) {
-  const checkItems = [
-    "ISO 9001:2015 & MSME Certified",
-    "6+ Years of Industry Expertise",
-    "500+ Satisfied Clients",
-    "4.9 Out Of 5 Google Rating",
-    "Free Security Consultation",
-    "Same-Day Service Available"
-  ];
-
+export default function HeroSection({ onQuoteSuccess, onScrollToForm }) {
   return (
-    <section className="hero-section" id="hero">
-      <div className="hero-mesh-overlay"></div>
-      <div className="hero-glow-orb"></div>
+    <section className="hero-ref-section" id="hero">
+      {/* Top Banner Tagline */}
+      <div className="hero-top-badge">
+        <ShieldCheck size={14} />
+        <span>Gurgaon & Delhi NCR's Trusted Security & CCTV Surveillance Partner</span>
+      </div>
 
-      <div className="hero-content">
-        <h1 className="hero-title">
-          Secure Your Home &amp;<br />Business Today!
-        </h1>
-
-        <p className="hero-subtitle">
-          Same-Day CCTV Installation in Gurgaon
-        </p>
-
-        <p className="hero-tagline">
-          Free Risk Check.
-        </p>
-
-        <ul className="hero-checklist">
-          {checkItems.map((item, idx) => (
-            <li key={idx} className="checklist-item">
-              <span className="check-icon-circle">
-                <Check size={13} strokeWidth={3.5} />
-              </span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* Instant Lead Capture Form */}
+      {/* Main Top Lead Form matching Frame 0 & Frame 1 */}
+      <div className="hero-lead-form-wrapper">
         <QuoteForm onSuccess={onQuoteSuccess} />
       </div>
+
+      {/* Instant Action CTA Buttons matching Frame 9 */}
+      <div className="hero-cta-action-strip">
+        <a 
+          href="#quote" 
+          className="btn-gold-action-strip"
+          onClick={(e) => {
+            e.preventDefault();
+            const el = document.querySelector('.quote-form-container');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          <FileCheck size={17} />
+          <span>REQUEST FREE RISK ASSESSMENT</span>
+        </a>
+
+        <a 
+          href={`tel:${companyInfo.phoneTel}`} 
+          className="btn-white-action-strip"
+        >
+          <Phone size={17} />
+          <span>CALL FOR INSTANT QUOTE</span>
+        </a>
+
+        <p className="hero-guarantee-note">
+          Free Site Visit & Same Day Callback
+        </p>
+      </div>
+
+      {/* Accreditations Carousel */}
+      <TrustBadges />
     </section>
   );
 }
